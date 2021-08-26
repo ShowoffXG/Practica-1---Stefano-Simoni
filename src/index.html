@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .video{
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+        .cosas{
+            position: absolute;
+            top: 95%;
+            left: 5%;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <video class = "video" id = "risa" src = "./risitas.mp4" type = "video/mp4" autoplay loop></video>
+    <div class = "cosas">
+        <h1 id = "texto" onclick = cambiarTexto()>Stefano Simoni</h1>
+        <button id = "boton" onclick = cambiarVideo()>Apreta aca</button>
+    </div>
+    <script>
+        document.getElementById('risa').play();
+        var videoMostrado = "Risitas";
+        function cambiarVideo(){
+            var video1 = document.getElementById('risa');
+            if(videoMostrado == "Risitas"){
+                video1.src = "./Bodoque.mp4";
+                videoMostrado = "Bodoque";
+            } else if(videoMostrado == "Bodoque"){
+                video1.src = "./risitas.mp4";
+                videoMostrado = "Risitas";
+            }
+        }
+        var textoMostrado = "Nombre1";
+        function cambiarTexto(){
+            var texto1 = document.getElementById('texto');
+            if(textoMostrado == "Nombre1"){
+                texto1.innerHTML = "Risitas - Bodoque"
+                textoMostrado = "Nombre2";
+            } else if(textoMostrado == "Nombre2"){
+                texto1.innerHTML = "Stefano Simoni";
+                textoMostrado = "Nombre1";
+            }
+        }
+    </script>
+</body>
+</html>
